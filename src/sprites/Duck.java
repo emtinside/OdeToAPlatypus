@@ -28,15 +28,14 @@ public class Duck extends Sprite{
 			"Did you happen to understand what they all mean though?", "Please enter the unknowns for each of the following items, in order, separated by commas:" ,"A Golden Crown, A Letter, A CD & Sleeve, A Lovely Photo"};
 	public static final String[] WRONG_PASSWORD_TEXT= {"Oh no.. that wasn't right", "Think a little harder"};
 	public static final String[] RIGHT_PASSWORD_TEXT= {"Ah... it seems that you got it right",
-			"Since you got it...",
-			"Maybe it wasn't challenging enough?", "Just kidding >:)", "That being said, I'm giving you more questions :p"};
+			"Maybe it wasn't challenging enough?","That being said, I'm giving you more questions"};
 	public static final int ALMOST_THERE = 3;
 	public static final String[] ALMOST_THERE_TEXT= {"Damn, ok you got it", "I mean I guess it's easy because you also have multiple tries", "Again, coding laziness: idk how many tries you actually took",
 			"Okok another question:"};
 	public static final int FINAL_QUESTION=4;
 	public static final String[] FINAL_QUESTION_TEXT= {" "," "," ","Hey... you were supposed to get tired and quit console :/", 
 			"I guess if you actually answered that question correctly...","You probably already know what I'm trying to say",
-			"I hope this doesn't make anything weird and if it does well feel free to go awol lol", "I'm like dying internally writing this oml",
+			"I hope this doesn't make anything weird", "I'm like dying internally writing this oml",
 			"See the real question I wanted to bring up in your letter was... well just that", "Not making anything awkward by sending out the wrong message", 
 			"Oh something funny, after reading that I perhaps internally screamed", "That's a good thing by the way",
 			"Continuing on", "Not even that long ago I think it was the 2 AM highness getting to you",
@@ -67,7 +66,7 @@ public class Duck extends Sprite{
 			"That being said, honestly I'm so grateful to have you as a friend","Having you as a positive influence has really helped me get my life gradually back on track",
 			"Even if I've only known you for three months", "Wait... three months oh wow that's actually pretty cool","But yeah! Thanks for starting it all by talking to me first :)",
 			"Oh and before you exit out", "Because I am saying I don't conceal emotions around you, I'll give you a hint for this so-called game","Your answer to the last question?",
-			"I mean, its one of two things I questioned","Maybe you'll find something interesting if you know the second thing", "I'll have you go from there :)", "Ok byeeee"};
+			"I mean, its one of two things","Maybe you'll find something interesting if you know the second thing", "Ok byeeee"};
 	
 	public Duck(float x, float y, double width, double height, String img) {
 		super(x, y, width, height, img);
@@ -80,19 +79,19 @@ public class Duck extends Sprite{
 		if (d.getDuckSpeakCount() == START_TEXT) {
 			for(String s: START_TEXT_ARRAY) {
 				System.out.println(s);
-				Thread.sleep((long)(2*1000));
+				Thread.sleep((long)(1.5*1000));
 			}
 		}
 		else if (d.getDuckSpeakCount() == MISSING_EVIDENCE_TEXT) {
 			for(String s:MISSING_EVIDENCE_TEXT_ARRAY) {
 				System.out.println(s);
-				Thread.sleep((long)(2*1000));
+				Thread.sleep((long)(1.5*1000));
 			}
 		}
 		else if (d.getDuckSpeakCount() == ALL_EVIDENCE_FOUND_TEXT) {
 			for(String s: ALL_EVIDENCE_FOUND_TEXT_ARRAY) {
 				System.out.println(s);
-				Thread.sleep((long)(2*1000));
+				Thread.sleep((long)(1.5*1000));
 			}
 			String password = scanner.nextLine();
 			String[] passwordArr = password.split(",");
@@ -136,13 +135,17 @@ public class Duck extends Sprite{
 				}
 			}
 			if(d.getDuckSpeakCount() == FINAL_QUESTION) {
-				System.out.println("What's the part in the letter you gave me that I questioned? Exact words if possible");
+				System.out.println("So the letter object here represents something, right?");
+				Thread.sleep((long)(1000));
+				System.out.println("With that said, I asked you a question about it");
+				Thread.sleep((long)(1000));
+				System.out.println("What was that question about?");
 				String letterPart = scanner.nextLine();
 				letterPart.toLowerCase();
-				if(  (letterPart.contains("awkward") || letterPart.contains("weird")) && letterPart.contains("anything") && letterPart.contains("wrong") && (letterPart.contains("message") || letterPart.contains("signals")) ) {
+				if(  (letterPart.contains("awkward") || letterPart.contains("weird")) && letterPart.contains("wrong") && (letterPart.contains("message") || letterPart.contains("signals")) ) {
 					for(String s: FINAL_QUESTION_TEXT) {
 						if(s.length()==0) {
-							Thread.sleep((long)3*1000);
+							Thread.sleep((long)2*1000);
 						}
 						System.out.println(s);
 						Thread.sleep((long)(2000));
@@ -183,13 +186,17 @@ public class Duck extends Sprite{
 				}
 			}
 			if(d.getDuckSpeakCount() == FINAL_QUESTION) {
-				System.out.println("What's the part in the letter you gave me that I questioned? Exact words if possible");
+				System.out.println("So the letter object here represents something, right?");
+				Thread.sleep((long)(1000));
+				System.out.println("With that said, I asked you a question about it");
+				Thread.sleep((long)(1000));
+				System.out.println("What was that question about?");
 				String letterPart = scanner.nextLine();
 				letterPart.toLowerCase();
-				if(  (letterPart.contains("awkward") || letterPart.contains("weird")) && letterPart.contains("anything") && letterPart.contains("wrong") && (letterPart.contains("message") || letterPart.contains("signals")) ) {
+				if(  (letterPart.contains("awkward") || letterPart.contains("weird")) && letterPart.contains("wrong") && (letterPart.contains("message") || letterPart.contains("signals")) ) {
 					for(String s: FINAL_QUESTION_TEXT) {
 						if(s.length()==0) {
-							Thread.sleep((long)3*1000);
+							Thread.sleep((long)2*1000);
 						}
 						System.out.println(s);
 						Thread.sleep((long)(2000));
@@ -218,13 +225,17 @@ public class Duck extends Sprite{
 			
 		}
 		else if(d.getDuckSpeakCount() == FINAL_QUESTION) {
-			System.out.println("What's the part in the letter you gave me that I questioned? Exact words if possible");
+			System.out.println("So the letter object here represents something, right?");
+			Thread.sleep((long)(1000));
+			System.out.println("With that said, I asked you a question about it");
+			Thread.sleep((long)(1000));
+			System.out.println("What was that question about?");
 			String letterPart = scanner.nextLine();
 			letterPart.toLowerCase();
 			if(  (letterPart.contains("awkward") || letterPart.contains("weird")) && letterPart.contains("wrong") && (letterPart.contains("message") || letterPart.contains("signals")) ) {
 				for(String s: FINAL_QUESTION_TEXT) {
 					if(s.length()==0) {
-						Thread.sleep((long)3*1000);
+						Thread.sleep((long)2*1000);
 					}
 					System.out.println(s);
 					Thread.sleep((long)(2000));
